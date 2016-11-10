@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'pixpie-android'
+    bintrayName = 'pixpie-android'
+
+    publishedGroupId = 'co.pixpie.api.android'
+    libraryName = 'pixpie-android'
+    artifact = 'pixpie-android'
+
+    libraryDescription = 'Pixpie Android SDK'
+
+    siteUrl = 'https://www.pixpie.co'
+    gitUrl = 'https://github.com/PixpieCo/AndroidSDK.git'
+
+    libraryVersion = '1.2.1'
+
+    developerId = 'accord'
+    developerName = 'Vladimir Usychenko'
+    developerEmail = 'v.usychenko[at]pixpie.co'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+
+        // Do not place library dependencies here
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+    useLibrary 'org.apache.http.legacy'
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/BCKEY.DSA'
+        exclude 'AUTHORS'
+    }
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'org.apache.commons:commons-lang3:3.3.2'
+    compile 'com.android.volley:volley:1.0.0'
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
