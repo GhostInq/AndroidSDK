@@ -161,6 +161,7 @@ Uploaded local images could be simply deleted from Pixpie cloud by calling the d
 
 ## License
 
+Pixpie Android SDK is available under the Apache 2.0 license.
 
     Copyright (C) 2015,2016 Pixpie
 
@@ -175,3 +176,4 @@ Uploaded local images could be simply deleted from Pixpie cloud by calling the d
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
