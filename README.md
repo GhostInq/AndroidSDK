@@ -1,6 +1,7 @@
 # Pixpie Android SDK
 
 https://www.pixpie.co
+[![Analytics](https://ga-beacon.appspot.com/UA-88187046-1/pixpie-github/AndroidSDK?pixel)](https://github.com/PixpieCo/AndroidSDK)
 
 ## What is it for? ##
 
